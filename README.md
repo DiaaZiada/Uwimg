@@ -6,12 +6,13 @@ Vision is C package for images processing stuff callable in Python
 
 **Table Content**
 
- 
-
  * [Basic Level Of Image Processing](#basic-level-of-image-processing)
 	 * [Getting and setting pixels](#getting-and-setting-pixels)
 	 * [Copy image](#copy-image)
 	 * [ Grayscale image](#grayscale-image)
+	 * [ Shifting the image colors](#shifting-the-image-colors)
+	 * [Clamping the image values](#clamping-the-image-values)
+	 * [RGB and HSV](#rgb-and-hsv)
  2. Middle Level Of Image Processing]
  3. Panorama
  4. Optical Flow
@@ -59,6 +60,39 @@ save_image(graybar, "output/gray_dog")
 ```
 ![gray](https://github.com/DiaaZiada/Vision/blob/master/output/gray_dog.jpg)
 
+### Shifting the image colors
+```python
+from vision import *
+im = load_image("data/dog.jpg")
+shift_image(im, 0, .4)
+shift_image(im, 1, .4)
+shift_image(im, 2, .4)
+save_image(im, "output/shifted_dog")
+=>
+```
+![shifted](https://github.com/DiaaZiada/Vision/blob/master/output/shifted_dog.jpg)
+
+### Clamping the image values
+```python
+from vision import *
+im = load_image("data/dog.jpg")
+clamp_image(im)
+save_image(im, "output/ligthfixed_dog")
+=>
+```
+![enter image description here](af)
+### RGB and HSV
+```python
+from vision import *
+im = load_image("data/dog.jpg")
+rgb_to_hsv(im)
+shift_image(im, 1, .2)
+clamp_image(im)
+hsv_to_rgb(im)
+save_image(im, "output/rgb_hsv_rgb_dog")
+=>
+```
+![shifted](https://github.com/DiaaZiada/Vision/blob/master/output/rgb_hsv_rgb_dog.jpg)
 
 
 
