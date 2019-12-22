@@ -83,7 +83,7 @@ clamp_image(im)
 save_image(im, "output/ligth_fixed_dog")
 =>
 ```
-![Clamping]([https://github.com/DiaaZiada/Vision/blob/master/output/light_fixed_dog.jpg)
+![Clamping](https://github.com/DiaaZiada/Vision/blob/master/output/light_fixed_dog.jpg)
 
 ### RGB and HSV
 ```python
