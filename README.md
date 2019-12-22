@@ -23,7 +23,7 @@ Vision is a C package for images processing stuff callable in Python. It's an as
 
 Original Image
 
-[original image](https://github.com/DiaaZiada/Vision/blob/master/data/dog.jpg) 
+![Original Image](https://github.com/DiaaZiada/Vision/blob/master/data/dog.jpg)
 
 ### Getting and setting pixels
 **Getting pixel value**
