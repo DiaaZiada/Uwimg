@@ -8,7 +8,9 @@ Vision is C package for images processing stuff callable in Python
 
  
 
- 1. [Basic Level Of Image Processing](# Basic Level Of Image Processing)
+ * [Basic Level Of Image Processing](#Basic%20Level%20Of%20Image%20Processing)
+	 *
+	 
  2. Middle Level Of Image Processing]
  3. Panorama
  4. Optical Flow
