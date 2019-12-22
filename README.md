@@ -13,7 +13,7 @@ Vision is C package for images processing stuff callable in Python
 	 * [ Shifting the image colors](#shifting-the-image-colors)
 	 * [Clamping the image values](#clamping-the-image-values)
 	 * [RGB and HSV](#rgb-and-hsv)
- 2. Middle Level Of Image Processing]
+ * [Middle Level Of Image Processing](#middle-level-of-image-processing)
  3. Panorama
  4. Optical Flow
  5. Neural Network
@@ -30,6 +30,7 @@ print(pixel)
 => 0.0470588244497776    
 ```
 **Setting pixel to a value**
+
 remove all red colors from the image
 ```python
 from vision import *
@@ -76,11 +77,15 @@ save_image(im, "output/shifted_dog")
 ```python
 from vision import *
 im = load_image("data/dog.jpg")
+shift_image(im, 0, .4)
+shift_image(im, 1, .4)
+shift_image(im, 2, .4)
 clamp_image(im)
-save_image(im, "output/ligthfixed_dog")
+save_image(im, "output/ligth_fixed_dog")
 =>
 ```
-![enter image description here](af)
+![shifted](https://github.com/DiaaZiada/Vision/blob/master/output/ligth_fixed_dog.jpg)
+
 ### RGB and HSV
 ```python
 from vision import *
@@ -94,7 +99,7 @@ save_image(im, "output/rgb_hsv_rgb_dog")
 ```
 ![shifted](https://github.com/DiaaZiada/Vision/blob/master/output/rgb_hsv_rgb_dog.jpg)
 
+## Middle Level Of Image Processing
 
-
-
+###
  
