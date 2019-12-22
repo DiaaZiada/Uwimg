@@ -31,7 +31,6 @@ print(pixel)
 ```
 **Setting pixel to a value**
 
-remove all red colors from the image
 ```python
 from vision import *
 # remove all red colors from the image
@@ -84,7 +83,7 @@ clamp_image(im)
 save_image(im, "output/ligth_fixed_dog")
 =>
 ```
-![shifted](https://github.com/DiaaZiada/Vision/blob/master/output/ligth_fixed_dog.jpg)
+![Clamping]([https://github.com/DiaaZiada/Vision/blob/master/output/light_fixed_dog.jpg)
 
 ### RGB and HSV
 ```python
