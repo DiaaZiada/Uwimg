@@ -2,7 +2,7 @@
 
 # Uwimg
 
-![uwimg](https://github.com/DiaaZiada/Uwimg/blob/master/images/vision.jpg)
+![uwimg](https://github.com/DiaaZiada/Uwimg/blob/master/images/Vision.jpg)
 
 Uwimg is a C package for images processing stuff callable in Python. It's an assignment of [The Ancient Secrets of Computer vision CSE 455](https://pjreddie.com/courses/computer-vision/)
 
