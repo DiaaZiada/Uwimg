@@ -324,7 +324,7 @@ test = load_classification_data("mnist.test", "mnist.labels", 1)
 
 print("done")
 
-print
+print()
 
 print("training model...")
 
