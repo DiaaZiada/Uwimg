@@ -131,7 +131,7 @@ im = load_image("data/dog.jpg")
 a = bilinear_resize(im, im.w*4, im.h*4)
 save_image(a, "output/4x_bl_dog")
 ```
-![maximizing bl ](https://github.com/DiaaZiada/Vision/blob/master/output/4x_bl_dog.jpg)
+![maximizing bl ](https://github.com/DiaaZiada/Vision/blob/master/output/4x-bl_dog.jpg)
 
 
 #### Minimizing 
