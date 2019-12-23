@@ -6,9 +6,9 @@ OBJ=load_image.o process_image.o args.o filter_image.o resize_image.o test.o har
 EXOBJ=main.o
 
 VPATH=./src/:./
-SLIB=libvision.so
-ALIB=libvision.a
-EXEC=vision
+SLIB=libuwimg.so
+ALIB=libuwimg.a
+EXEC=uwimg
 OBJDIR=./obj/
 
 CC=gcc
