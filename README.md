@@ -24,15 +24,18 @@ Vision is a C package for images processing stuff callable in Python. It's an as
 	* [Image Features](#image-features)
 		* [Sobel filters](#sobel-filters) 
 		* [Colorized Representation](#colorized-representation)
- 3. Panorama
+ * [Panorama](#panorama)
+	 * [Harris detector](#harris-detector) 
+	 * [Patch matching](#patch-matching)
+	 * [Combine the images with a homography](#combine-the-images-with-a-homography)
  4. Optical Flow
  5. Neural Network
 	
-## Basic Level Of Image Processing
-
 Original Image
 
 ![Original Image](https://github.com/DiaaZiada/Vision/blob/master/data/dog.jpg)
+
+## Basic Level Of Image Processing
 
 ### Getting and setting pixels
 **Getting pixel value**
@@ -236,6 +239,43 @@ img = colorize_sobel(im)
 save_image(img, "output/colored_magnitude_dog")
 ```
 ![colored magnitude](https://github.com/DiaaZiada/Vision/blob/master/output/colored_magnitude_dog.jpg)
+
+## Panorama
+### Harris detector
+```python
+from vision import *
+im = load_image("data/Rainier1.png")
+detect_and_draw_corners(im, 2, 50, 3)
+save_image(im, "output/corners")
+```
+![harris detector](https://github.com/DiaaZiada/Vision/blob/master/output/corners.jpg)
+
+### Patch matching
+```python
+from vision import *
+a = load_image("data/Rainier1.png")
+b = load_image("data/Rainier2.png")
+m = find_and_draw_matches(a, b, 2, 50, 3)
+save_image(m, "output/matches")
+```
+![patch matching](https://github.com/DiaaZiada/Vision/blob/master/output/matches.jpg)
+
+### Combine the images with a homography
+```python
+from vision import *
+im1 = load_image("data/Rainier1.png")
+im2 = load_image("data/Rainier2.png")
+pan = panorama_image(im1, im2, thresh=50)
+save_image(pan, "output/easy_panorama")
+```
+![combine the images with a homography](https://github.com/DiaaZiada/Vision/blob/master/output/easy_panorama.jpg)
+
+**Final panorama image**
+![final panorama image](https://github.com/DiaaZiada/Vision/blob/master/output/rainier_panoram.jpg)
+
+
+
+
 
 
 
