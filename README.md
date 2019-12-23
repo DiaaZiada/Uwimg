@@ -1,5 +1,3 @@
-
-
 # Uwimg
 
 ![uwimg](https://github.com/DiaaZiada/Uwimg/blob/master/images/Vision.jpg)
@@ -304,19 +302,19 @@ from uwimg import *
 
 def softmax_model(inputs, outputs):
 
-l = [make_layer(inputs, outputs, SOFTMAX)]
+	l = [make_layer(inputs, outputs, SOFTMAX)]
 
-return make_model(l)
+	return make_model(l)
 
 def neural_net(inputs, outputs):
 
-print inputs
+	print(inputs)
 
-l = [ make_layer(inputs, 32, LOGISTIC),
+	l = [ make_layer(inputs, 32, LOGISTIC),
 
-make_layer(32, outputs, SOFTMAX)]
+	make_layer(32, outputs, SOFTMAX)]
 
-return make_model(l)
+	return make_model(l)
 
 print("loading data...")
 
@@ -346,7 +344,7 @@ train_model(m, train, batch, iters, rate, momentum, decay)
 
 print("done")
 
-print
+print()
 
 print("evaluating model...")
 
@@ -354,7 +352,7 @@ print("training accuracy: %f", accuracy_model(m, train))
 
 print("test accuracy: %f", accuracy_model(m, test))
 ```
-```python
+```bash
 loading data...
 done
 
