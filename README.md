@@ -31,9 +31,8 @@ Uwimg is a C package for images processing stuff callable in Python. It's an ass
 	 * [Patch matching](#patch-matching)
 	 * [Combine the images with a homography](#combine-the-images-with-a-homography)
 * [Optical Flow](#optical-flow) 
- 4. Optical Flow
- 5. Neural Network
-	
+* [Neural Network](#neural-network)
+
 Original Image
 
 ![Original Image](https://github.com/DiaaZiada/Uwimg/blob/master/data/dog.jpg)
@@ -299,7 +298,82 @@ save_image(a, "output/optical-flow")
 
 ![optical flow](https://github.com/DiaaZiada/Uwimg/blob/master/output/optical-flow.jpg)
 
+## Neural Network
+```python
+from uwimg import *
 
+def softmax_model(inputs, outputs):
+
+l = [make_layer(inputs, outputs, SOFTMAX)]
+
+return make_model(l)
+
+def neural_net(inputs, outputs):
+
+print inputs
+
+l = [ make_layer(inputs, 32, LOGISTIC),
+
+make_layer(32, outputs, SOFTMAX)]
+
+return make_model(l)
+
+print("loading data...")
+
+train = load_classification_data("mnist.train", "mnist.labels", 1)
+
+test = load_classification_data("mnist.test", "mnist.labels", 1)
+
+print("done")
+
+print
+
+print("training model...")
+
+batch = 128
+
+iters = 1000
+
+rate = .01
+
+momentum = .9
+
+decay = .0
+
+m = softmax_model(train.X.cols, train.y.cols)
+
+train_model(m, train, batch, iters, rate, momentum, decay)
+
+print("done")
+
+print
+
+print("evaluating model...")
+
+print("training accuracy: %f", accuracy_model(m, train))
+
+print("test accuracy: %f", accuracy_model(m, test))
+```
+```python
+loading data...
+done
+
+training model...
+000000: Loss: 2.370572
+000001: Loss: 2.302090
+000002: Loss: 2.287877
+...
+...
+...
+000997: Loss: 0.347353
+000998: Loss: 0.387637
+000999: Loss: 0.330449
+done
+
+evaluating model...
+training accuracy: %f 0.90235
+test accuracy:     %f 0.9077
+```
 
 
 
