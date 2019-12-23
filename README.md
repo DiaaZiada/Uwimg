@@ -1,3 +1,4 @@
+
 # Vision
 
 ![Vision](https://github.com/DiaaZiada/Vision/blob/master/images/Vision.jpg)
@@ -28,6 +29,7 @@ Vision is a C package for images processing stuff callable in Python. It's an as
 	 * [Harris detector](#harris-detector) 
 	 * [Patch matching](#patch-matching)
 	 * [Combine the images with a homography](#combine-the-images-with-a-homography)
+* [Optical Flow](#optical-flow) 
  4. Optical Flow
  5. Neural Network
 	
@@ -40,7 +42,7 @@ Original Image
 ### Getting and setting pixels
 **Getting pixel value**
 ```python
-from vision import *
+from uwimg import *
 im = load_image("data/dog.jpg")
 pixel = get_pixel(im, 0, 0, 0)
 print(pixel)
@@ -51,7 +53,7 @@ print(pixel)
 **Setting pixel to a value**
 
 ```python
-from vision import *
+from uwimg import *
 # remove all red colors from the image
 im = load_image("data/dog.jpg")
 for row in range(im.h):
@@ -64,13 +66,13 @@ save_image(im, "output/no_red_dog")
 
 ### Copy image
 ```python
-from vision import *
+from uwimg import *
 im = load_image("data/dog.jpg")
 im2 = copy_image(im) 
 ```
 ### Grayscale image
 ```python
-from vision import *
+from uwimg import *
 im = load_image("data/dog.jpg")
 graybar = rgb_to_grayscale(im)
 save_image(graybar, "output/gray_dog")
@@ -79,7 +81,7 @@ save_image(graybar, "output/gray_dog")
 
 ### Shifting the image colors
 ```python
-from vision import *
+from uwimg import *
 im = load_image("data/dog.jpg")
 shift_image(im, 0, .4)
 shift_image(im, 1, .4)
@@ -90,7 +92,7 @@ save_image(im, "output/shifted_dog")
 
 ### Clamping the image values
 ```python
-from vision import *
+from uwimg import *
 im = load_image("data/dog.jpg")
 shift_image(im, 0, .4)
 shift_image(im, 1, .4)
@@ -102,7 +104,7 @@ save_image(im, "output/ligth_fixed_dog")
 
 ### RGB and HSV
 ```python
-from vision import *
+from uwimg import *
 im = load_image("data/dog.jpg")
 rgb_to_hsv(im)
 shift_image(im, 1, .2)
@@ -120,7 +122,7 @@ save_image(im, "output/rgb_hsv_rgb_dog")
 **Nearest Neighbor** 
 
 ```python
-from vision import *
+from uwimg import *
 im = load_image("data/dog.jpg")
 a = nn_resize(im, im.w*4, im.h*4)
 save_image(a, "output/4x_nn_dog")
@@ -129,7 +131,7 @@ save_image(a, "output/4x_nn_dog")
 
 **Bilinear**
 ```python
-from vision import *
+from uwimg import *
 im = load_image("data/dog.jpg")
 a = bilinear_resize(im, im.w*4, im.h*4)
 save_image(a, "output/4x_bl_dog")
@@ -142,7 +144,7 @@ save_image(a, "output/4x_bl_dog")
 **Nearest Neighbor** 
 
 ```python
-from vision import *
+from uwimg import *
 im = load_image("data/dog.jpg")
 a = nn_resize(im, im.w//7, im.h//7)
 save_image(a, "output/7th-nn_dog")
@@ -151,7 +153,7 @@ save_image(a, "output/7th-nn_dog")
 
 **Bilinear**
 ```python
-from vision import *
+from uwimg import *
 im = load_image("data/dog.jpg")
 a = bilinear_resize(im, im.w//7, im.h//7)
 save_image(a, "output/7th-bl_dog")
@@ -162,7 +164,7 @@ save_image(a, "output/7th-bl_dog")
 
 #### Blurring 
 ```python
-from vision import *
+from uwimg import *
 im = load_image("data/dog.jpg")
 f = make_box_filter(7)
 blur = convolve_image(im, f, 1)
@@ -173,7 +175,7 @@ save_image(blur, "output/box7_dog")
 #### Blur and Resizing 
 
 ```python
-from vision import *
+from uwimg import *
 im = load_image("data/dog.jpg")
 f = make_box_filter(7)
 blur = convolve_image(im, f, 1)
@@ -184,7 +186,7 @@ save_image(thumb, "output/thumb_dog")
 
 #### Gaussian
 ```python
-from vision import *
+from uwimg import *
 im = load_image("data/dog.jpg")
 f = make_gaussian_filter(2)
 blur = convolve_image(im, f, 1)
@@ -194,7 +196,7 @@ save_image(blur, "output/gauss2_dog")
 
 #### Frequency and Reconstruction
 ```python
-from vision import *
+from uwimg import *
 im = load_image("data/dog.jpg")
 f = make_gaussian_filter(2)
 lfreq = convolve_image(im, f, 1)
@@ -219,7 +221,7 @@ reconstruct dog
 ### Image Features
 #### Sobel filters
 ```python
-from vision import *
+from uwimg import *
 im = load_image("data/dog.jpg")
 res = sobel_image(im)
 mag = res[0]
@@ -230,7 +232,7 @@ save_image(mag, "output/magnitude")
 
 #### Colorized Representation
 ```python
-from vision import *
+from uwimg import *
 im = load_image("data/dog.jpg")
 res = sobel_image(im)
 mag = res[0]
@@ -243,7 +245,7 @@ save_image(img, "output/colored_magnitude_dog")
 ## Panorama
 ### Harris detector
 ```python
-from vision import *
+from uwimg import *
 im = load_image("data/Rainier1.png")
 detect_and_draw_corners(im, 2, 50, 3)
 save_image(im, "output/corners")
@@ -252,7 +254,7 @@ save_image(im, "output/corners")
 
 ### Patch matching
 ```python
-from vision import *
+from uwimg import *
 a = load_image("data/Rainier1.png")
 b = load_image("data/Rainier2.png")
 m = find_and_draw_matches(a, b, 2, 50, 3)
@@ -262,7 +264,7 @@ save_image(m, "output/matches")
 
 ### Combine the images with a homography
 ```python
-from vision import *
+from uwimg import *
 im1 = load_image("data/Rainier1.png")
 im2 = load_image("data/Rainier2.png")
 pan = panorama_image(im1, im2, thresh=50)
@@ -272,6 +274,30 @@ save_image(pan, "output/easy_panorama")
 
 **Final panorama image**
 ![final panorama image](https://github.com/DiaaZiada/Vision/blob/master/output/rainier_panoram.jpg)
+
+## Optical Flow
+
+```python
+from uwimg import *
+a = load_image("data/dog_a.jpg")
+b = load_image("data/dog_b.jpg")
+flow = optical_flow_images(b, a, 15, 8)
+draw_flow(a, flow, 8)
+save_image(a, "output/optical-flow")
+```
+
+**image a**
+
+![image a](https://github.com/DiaaZiada/Vision/blob/master/data/dog_a.jpg)
+
+**image b**
+
+![image b](https://github.com/DiaaZiada/Vision/blob/master/data/dog_b.jpg)
+
+**optical flow**
+
+![optical flow](https://github.com/DiaaZiada/Vision/blob/master/output/optical-flow.jpg)
+
 
 
 
