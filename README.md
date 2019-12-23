@@ -1,3 +1,5 @@
+
+
 # Uwimg
 
 ![uwimg](https://github.com/DiaaZiada/Uwimg/blob/master/images/Vision.jpg)
@@ -297,6 +299,14 @@ save_image(a, "output/optical-flow")
 ![optical flow](https://github.com/DiaaZiada/Uwimg/blob/master/output/optical-flow.jpg)
 
 ## Neural Network
+#### Download data
+```bash
+wget https://pjreddie.com/media/files/mnist_train.tar.gz
+wget https://pjreddie.com/media/files/mnist_test.tar.gz
+tar xzf mnist_train.tar.gz
+tar xzf mnist_test.tar.gz
+```
+#### Train script
 ```python
 from uwimg import *
 
@@ -324,7 +334,7 @@ test = load_classification_data("mnist.test", "mnist.labels", 1)
 
 print("done")
 
-print()
+print
 
 print("training model...")
 
@@ -372,9 +382,3 @@ evaluating model...
 training accuracy: %f 0.90235
 test accuracy:     %f 0.9077
 ```
-
-
-
-
-
-
