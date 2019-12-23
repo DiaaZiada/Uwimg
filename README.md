@@ -1,5 +1,3 @@
-
-
 # Uwimg
 
 ![uwimg](https://github.com/DiaaZiada/Uwimg/blob/master/images/Vision.jpg)
@@ -206,17 +204,17 @@ save_image(lfreq, "output/low_frequency_dog.jpg")
 save_image(hfreq, "output/high_frequency_dog.jpg")
 save_image(reconstruct, "output/reconstruct_dog.jpg")
 ```
-low frequency
+**low frequency**
 
 ![low frequency](https://github.com/DiaaZiada/Uwimg/blob/master/output/low_frequency_dog.jpg)
 
-high frequency
+**high frequency**
 
 ![high frequency ](https://github.com/DiaaZiada/Uwimg/blob/master/output/high_frequency_dog.jpg)
 
-reconstruct dog
+**reconstruct**
 
-![reconstruct dog](https://github.com/DiaaZiada/Uwimg/blob/master/output/reconstruct_dog.jpg)
+![reconstruct](https://github.com/DiaaZiada/Uwimg/blob/master/output/reconstruct_dog.jpg)
 
 ### Image Features
 #### Sobel filters
