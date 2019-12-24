@@ -2,11 +2,11 @@
 
 ![uwimg](https://github.com/DiaaZiada/Uwimg/blob/master/images/Vision.jpg)
 
-Uwimg is a C package for images processing stuff callable in Python. It's an assignment of [The Ancient Secrets of Computer vision CSE 455](https://pjreddie.com/courses/computer-vision/)
+Uwimg is a C package for images processing that is callable in Python. It's an assignment of [The Ancient Secrets of Computer vision CSE 455](https://pjreddie.com/courses/computer-vision/)
 
 
 **Table Content**
-
+ * [Installation](#installation)
  * [Basic Level Of Image Processing](#basic-level-of-image-processing)
 	 * [Getting and setting pixels](#getting-and-setting-pixels)
 	 * [Copy image](#copy-image)
@@ -30,6 +30,14 @@ Uwimg is a C package for images processing stuff callable in Python. It's an ass
 	 * [Combine the images with a homography](#combine-the-images-with-a-homography)
 * [Optical Flow](#optical-flow) 
 * [Neural Network](#neural-network)
+
+
+## Installation
+```bash
+$git clone https://github.com/DiaaZiada/Uwimg
+$cd Uwimg
+$make
+```
 
 Original Image
 
